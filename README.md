@@ -5,9 +5,9 @@ Obtain a folder of shader screenshots from retroarch by using your rom, save sta
 
 Prerequisites
 - ROM
-- Save State (From RetroArch)
-- BIOS* (If the core requires it)
-- Initial internet connection (To build the docker image)
+- Save State *(From RetroArch)*
+- BIOS *(If the core requires it)*
+- Initial internet connection *(To build the docker image)*
 
 ### *1*. **Download the following:**
 - VcXsrv Windows X Server: https://github.com/marchaesen/vcxsrv
