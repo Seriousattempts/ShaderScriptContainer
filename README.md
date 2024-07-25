@@ -36,7 +36,7 @@ Prerequisites
 - You will type `"set DISPLAY=iphere:0.0
 docker run -it --rm --privileged -e DISPLAY=%DISPLAY% -v /tmp/.X11-unix:/tmp/.X11-unix -v "C:\This\IS\The\Path\To\Your\Current\FolderShared:/app/data" ubuntu-desktop"` without quotes.
 Change iphere in set DISPLAY to your IP from ipconfig, and change C:\This\IS\The\Path\To\Your\Current\Folder to the path of your ROM/Save State and BIOS
-###6. GUI asking you to select a core, rom, save state and shaders should load
+### 6. GUI asking you to select a core, rom, save state and shaders should load
 - Follow that, and profit?
 
 ### **Increase Speed/Descrease Speed**
