@@ -30,7 +30,7 @@ Prerequisites
 - Do not close the command prompt
 ### *5*. **Launch container with your IP**
 - In Windows search bar, we will launch the installed VcXsrv by typing `XLaunch`
-- Select any display setting | Start no client | check the "Disable access control" checkbox, select finished.
+- Select any display setting (Large Window) | Start no client | check the "Disable access control" checkbox, select finished.
 - Back to the previous command prompt, you will now launch the my-windows-image while it's connect to one of your folders that has your ROM, Save State and bios (if necessary).
 - You will type `"set DISPLAY=iphere:0.0
 docker run -it --rm --privileged -e DISPLAY=%DISPLAY% -v /tmp/.X11-unix:/tmp/.X11-unix -v "C:\This\IS\The\Path\To\Your\Current\FolderShared:/app/data" ubuntu-desktop"` without quotes.
