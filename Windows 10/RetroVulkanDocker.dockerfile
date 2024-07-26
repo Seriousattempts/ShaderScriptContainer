@@ -73,9 +73,6 @@ RUN cd /opt && git clone https://github.com/libretro/dolphin
 # Copy and adjust your Python application
 COPY ./RetroVulkan.py /opt/retroarch/
 
-# Copy the supervisord configuration file
-COPY ./supervisordvulkan.conf /etc/supervisor/conf.d/supervisordvulkan.conf
-
 # Ensure the log directories exist and have the correct permissions
 RUN mkdir -p /home/ralt/supervisor-logs && \
     chown -R $USERNAME:$USERNAME /home/ralt/supervisor-logs
@@ -92,4 +89,4 @@ RUN echo "export DISPLAY=\$DISPLAY" >> /home/$USERNAME/.bashrc && \
 USER $USERNAME
 
 # Set up Dolphin, then start supervisord and the Python application
-CMD ["sh", "-c", "dbus-launch --exit-with-session startxfce4 & cd /opt/dolphin && mkdir -p /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && cp -r Data/Sys /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && supervisord -c /etc/supervisor/conf.d/supervisordvulkan.conf && . /opt/venv/bin/activate && python3 /opt/retroarch/RetroVulkan.py"]
+CMD ["sh", "-c", "dbus-launch --exit-with-session startxfce4 & cd /opt/dolphin && mkdir -p /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && cp -r Data/Sys /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && . /opt/venv/bin/activate && python3 /opt/retroarch/RetroVulkan.py"]
