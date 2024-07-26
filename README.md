@@ -46,4 +46,4 @@ You can increase/decrease the speed of how the shaders are captured in the pytho
 - Open the Python file in your preferred IDE.
 - CTRL + F, type time.sleep(20). That should be within the function def start_retroarch, it should have time.sleep(20).
 - Increase/decrease the number based on your own discretion.
-- After adjusting CTRL + F, type * 35). Increase or decrease that number for all 3 locations withint hat file to get a proper max estimated time when running the shader program
+- After adjusting CTRL + F, type * 35. Increase or decrease that number for all 3 locations withint hat file to get a proper max estimated time when running the shader program
