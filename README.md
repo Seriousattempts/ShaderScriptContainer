@@ -13,7 +13,7 @@ Prerequisites
 - VcXsrv Windows X Server: https://github.com/marchaesen/vcxsrv
 - Docker Desktop: https://www.docker.com/products/docker-desktop/
 - Install both
-### *2*. **Download the any of the 3 Retro Python files and it's respective dockerfile:**
+### *2*. **Download the any of the 3 Retro Python files and it's respective dockerfile along with the retroarch.cfg file:**
 - GL Driver = `RetroGL & RetroGLDocker`
 - GLCore Driver = `RetroGL & RetroGLCoreDocker`
 - Vulkan Driver = `RetroVulkan & RetroVulkanDocker`
