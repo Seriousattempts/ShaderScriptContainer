@@ -21,7 +21,7 @@ Prerequisites
 - Launch docker, if it's your first time, follow the steps on the screen.
 ### *4*. **Build the downloaded dockerfile**
 - Go to the where the files are downloaded, make sure the python driver, it's docker file, it's respective supervisord file and retroarch.cfg are in the same folder
-- Note if you want to change the resolution of the shader screenshots, go to line 84, change `1920x1080` to your desired resolution
+- Note if you want to change the resolution of the shader screenshots, go to line 9, change `1920x1080` to your desired resolution
 - Open command promt. You can either cd "insert folder path here" without quotes after opening command promt or type cmd in the address bar of file explorer to open command promt within that folder
 - type: `"docker build -t my-windows-image -f filenameofdockerfile.dockerfile ."` without quotes. Change filenameofdockerfile to the filename of that file
 - When completed, your docker image will be saved as my-windows-image.
@@ -29,12 +29,12 @@ Prerequisites
 - Do not close the command prompt
 ### *5*. **Launch container with your IP**
 - In Windows search bar, we will launch the installed VcXsrv by typing `XLaunch`
-- Select any display setting (Large Window) | Start no client | check the "Disable access control" checkbox, select finished.
+- Select any display setting (Multi Window) | Start no client | check the "Disable access control" checkbox, select finished.
 - Back to the previous command prompt, you will now launch the my-windows-image while it's connect to one of your folders that has your ROM, Save State and bios (if necessary).
 - You will type
 `"set DISPLAY=iphere:0.0"`
 
-`"docker run -it --rm --privileged --name retroarch-shaders -e DISPLAY=%DISPLAY% -v /tmp/.X11-unix:/tmp/.X11-unix -v "C:\This\IS\The\Path\To\Your\Current\FolderShared:/app/data" my-windows-image"` without quotes.
+`"docker run -it --rm --privileged --name retroarch-shaders -e DISPLAY=host.docker.internal:0.0 -v /tmp/.X11-unix:/tmp/.X11-unix -v "C:\This\IS\The\Path\To\Your\Current\FolderShared:/app/data" my-windows-image"` without quotes.
 Change iphere in set DISPLAY to your IP from ipconfig, and change C:\This\IS\The\Path\To\Your\Current\FolderShared to the path of your ROM/Save State and BIOS
 - The XLaunch should open a screen, showing a 4 quadrant gui. You may have to enlarge XLAunch depending on the display setting you selected.
 ### 6. GUI asking you to select a core, rom, save state and shaders should load
