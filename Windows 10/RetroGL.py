@@ -339,10 +339,17 @@ def handle_crash(slot_number, last_shader, crashed_shaders, retry=False):
     start_retroarch(slot_number, last_shader, crashed_shaders, not retry)
 
 def run_killall():
-    """Run the killall command to terminate all RetroArch instances."""
+    """Run the kill command to terminate all RetroArch instances."""
     try:
-        subprocess.run(["killall", "retroarch"], check=True)
-        time.sleep(2)  # Wait for 2 seconds to ensure all instances are terminated
+        # Find the PID of retroarch
+        result = subprocess.run(["ps", "-aux"], capture_output=True, text=True)
+        for line in result.stdout.splitlines():
+            if 'retroarch' in line:
+                pid = int(line.split()[1])
+                # Kill the process using its PID
+                subprocess.run(["kill", str(pid)], check=True)
+                time.sleep(2)  # Wait for 2 seconds to ensure the process is terminated
+        print("All RetroArch instances terminated.")
     except subprocess.CalledProcessError:
         print("RetroArch was not running or couldn't be killed.")
     except Exception as e:
