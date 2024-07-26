@@ -20,7 +20,7 @@ Prerequisites
 ### *3*. **Start Docker**
 - Launch docker, if it's your first time, follow the steps on the screen.
 ### *4*. **Build the downloaded dockerfile**
-- Go to the where the files are downloaded, make sure the python driver your downloaded and retroarch.dockerfile are in the same folder
+- Go to the where the files are downloaded, make sure the python driver, it's docker file and retroarch.cfg are in the same folder
 - Note if you want to change the resolution of the shader screenshots, go to line 81, change `1920x1080` to your desired resolution
 - Open command promt. You can either cd "insert folder path here" without quotes after opening command promt or type cmd in the address bar of file explorer to open command promt within that folder
 - type: `"docker build -t my-windows-image -f filenameofdockerfile.dockerfile ."` without quotes. Change filenameofdockerfile to the filename of that file
