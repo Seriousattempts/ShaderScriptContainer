@@ -44,6 +44,6 @@ Change iphere in set DISPLAY to your IP from ipconfig, and change C:\This\IS\The
 
 You can increase/decrease the speed of how the shaders are captured in the python file you downloaded. May be good to do depending on the device used to do this
 - Open the Python file in your preferred IDE.
-- CTRL + F, type time.sleep(20). That should be within the function def start_retroarch, it should have time.sleep(20).
+- CTRL + F, type time.sleep(20). That should be within the function def start_retroarch, it should have time.sleep(20). This is based on your computer speed, as some has note with bezels can crash https://forums.libretro.com/t/mega-bezel-reflection-shader-feedback-and-updates/25512/1491
 - Increase/decrease the number based on your own discretion.
-- After adjusting CTRL + F, type * 35. Increase or decrease that number for all 3 locations withint hat file to get a proper max estimated time when running the shader program
+- After adjusting CTRL + F, type "* 35" without quotes. Increase or decrease that number for all 4 locations within that file to get a proper max estimated time when running the shader program that corresponds with how you adjusted the time.sleep(20) for the start_retroarch function.
