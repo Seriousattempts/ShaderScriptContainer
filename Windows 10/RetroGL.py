@@ -799,7 +799,7 @@ def confirm_start():
 
     shader_count = sum(
         [len(find_shaders(os.path.join(shader_dir, shader), shader_extensions)) for shader in selected_shader_names])
-    total_time = shader_count * 45
+    total_time = shader_count * 35
     time_estimate = format_time(total_time)
 
     confirm_window = tk.Toplevel()
