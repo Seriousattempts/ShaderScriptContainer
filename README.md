@@ -35,7 +35,7 @@ Prerequisites
 `"set DISPLAY=iphere:0.0"`
 
 `"docker run -it --rm --privileged -e DISPLAY=%DISPLAY% -v /tmp/.X11-unix:/tmp/.X11-unix -v "C:\This\IS\The\Path\To\Your\Current\FolderShared:/app/data" my-windows-image"` without quotes.
-Change iphere in set DISPLAY to your IP from ipconfig, and change C:\This\IS\The\Path\To\Your\Current\Folder to the path of your ROM/Save State and BIOS
+Change iphere in set DISPLAY to your IP from ipconfig, and change C:\This\IS\The\Path\To\Your\Current\FolderShared to the path of your ROM/Save State and BIOS
 - The XLaunch should open a screen, showing a 4 quadrant gui. You may have to enlarge XLAunch depending on the display setting you selected.
 ### 6. GUI asking you to select a core, rom, save state and shaders should load
 - Follow that, and profit?
