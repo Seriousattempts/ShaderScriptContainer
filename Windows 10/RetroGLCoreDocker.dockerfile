@@ -76,6 +76,10 @@ COPY ./RetroVulkan.py /opt/retroarch/
 # Copy the supervisord configuration file
 COPY ./supervisordglcore.conf /etc/supervisor/conf.d/supervisordglcore.conf
 
+# Ensure the log directories exist and have the correct permissions
+RUN mkdir -p /home/ralt/supervisor-logs && \
+    chown -R $USERNAME:$USERNAME /home/ralt/supervisor-logs /home/ralt/supervisord.log /home/ralt/supervisord.pid
+
 # Change ownership of the app directory to the new user
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME /opt/retroarch
 
