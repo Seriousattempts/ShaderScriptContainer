@@ -13,7 +13,7 @@ Prerequisites
 - VcXsrv Windows X Server: https://github.com/marchaesen/vcxsrv
 - Docker Desktop: https://www.docker.com/products/docker-desktop/
 - Install both
-### *2*. **Download the Windows 10 folder:**
+### *2*. **Download the Windows 10 folder and extract it's zip file:**
 - GL Driver = `RetroGL & RetroGLDocker`
 - GLCore Driver = `RetroGL & RetroGLCoreDocker`
 - Vulkan Driver = `RetroVulkan & RetroVulkanDocker`
