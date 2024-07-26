@@ -71,7 +71,10 @@ RUN chown -R $USERNAME:$USERNAME /home/ralt/Downloads
 RUN cd /opt && git clone https://github.com/libretro/dolphin
 
 # Copy and adjust your Python application
-COPY ./RetroGL.py /opt/retroarch/
+COPY ./RetroVulkan.py /opt/retroarch/
+
+# Copy the supervisord configuration file
+COPY ./supervisordgl.conf /etc/supervisor/conf.d/supervisordgl.conf
 
 # Change ownership of the app directory to the new user
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME /opt/retroarch
@@ -84,5 +87,5 @@ RUN echo "export DISPLAY=\$DISPLAY" >> /home/$USERNAME/.bashrc && \
 # Switch to the created user
 USER $USERNAME
 
-# Set up Dolphin, then start the Python application
-CMD ["sh", "-c", "dbus-launch --exit-with-session startxfce4 & cd /opt/dolphin && mkdir -p /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && cp -r Data/Sys /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && . /opt/venv/bin/activate && python3 /opt/retroarch/RetroGL.py"]
+# Set up Dolphin, then start supervisord and the Python application
+CMD ["sh", "-c", "dbus-launch --exit-with-session startxfce4 & cd /opt/dolphin && mkdir -p /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && cp -r Data/Sys /home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage.home/system/dolphin-emu && supervisord -c /etc/supervisor/conf.d/supervisordgl.conf && . /opt/venv/bin/activate && python3 /opt/retroarch/RetroGL.py"]
