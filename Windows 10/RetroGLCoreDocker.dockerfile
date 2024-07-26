@@ -11,7 +11,7 @@ RUN apt-get update && \
     libxcb-xfixes0 libxcb-shape0 libxcb-randr0 libxcb-xkb1 libxkbcommon-x11-0 \
     vulkan-tools libvulkan1 mesa-vulkan-drivers \
     build-essential libgtk-3-dev libjpeg-dev libtiff-dev libsdl2-dev libnotify-dev \
-    freeglut3-dev libsm-dev libgtk2.0-dev pkg-config psmisc \
+    freeglut3-dev libsm-dev libgtk2.0-dev pkg-config psmisc supervisor \
     wmctrl git python3-dev python3-tk python3-pip python3-venv dconf-cli p7zip-full unzip wget fontconfig xorg curl \
     gnupg2 software-properties-common libfuse2 xfce4 xfce4-goodies xrdp dbus-x11 netcat-traditional \
     python3-tk libx11-6 libxext6 libxrender1 libxrandr2 libxcursor1 libxfixes3 libpango-1.0-0 libcairo2 && \
