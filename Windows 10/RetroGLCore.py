@@ -339,21 +339,14 @@ def handle_crash(slot_number, last_shader, crashed_shaders, retry=False):
     start_retroarch(slot_number, last_shader, crashed_shaders, not retry)
 
 def run_killall():
-    """Run the kill command to terminate all RetroArch instances."""
+    """Run the supervisorctl command to terminate the RetroArch process."""
     try:
-        # Find the PID of retroarch
-        result = subprocess.run(["ps", "-aux"], capture_output=True, text=True)
-        for line in result.stdout.splitlines():
-            if 'retroarch' in line:
-                pid = int(line.split()[1])
-                # Kill the process using its PID
-                subprocess.run(["kill", str(pid)], check=True)
-                time.sleep(2)  # Wait for 2 seconds to ensure the process is terminated
-        print("All RetroArch instances terminated.")
+        subprocess.run(["supervisorctl", "stop", "retroarch"], check=True)
+        time.sleep(2)  # Wait for 2 seconds to ensure the process is terminated
     except subprocess.CalledProcessError:
-        print("RetroArch was not running or couldn't be killed.")
+        print("RetroArch was not running or couldn't be stopped.")
     except Exception as e:
-        print(f"An error occurred while trying to kill RetroArch: {e}")
+        print(f"An error occurred while trying to stop RetroArch: {e}")
 
 def delete_last_screenshot(shader_name):
     """ Delete the last screenshot taken if RetroArch crashes. """
