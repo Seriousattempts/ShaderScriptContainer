@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import shutil
 import subprocess
@@ -8,6 +9,7 @@ from zipfile import ZipFile
 from datetime import datetime
 from pynput.keyboard import Key, Controller
 from tkinter import filedialog, messagebox, BooleanVar, Checkbutton
+sys.setrecursionlimit(2000) #Surpass Python's default recursion limit
 
 # Configuration
 retroarch_path = "/home/ralt/Downloads/RetroArch-Linux-x86_64/RetroArch-Linux-x86_64.AppImage"  # Full path to the RetroArch executable
