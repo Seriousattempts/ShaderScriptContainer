@@ -70,7 +70,7 @@ def apply_shader(process, shader, index, total_shaders):
         process.stdin.write(command.encode())
         process.stdin.flush()
         remaining_shaders = total_shaders - index + 1
-        print(f"Applying shader: {shader}")
+        print(f"{remaining_shaders} shaders remaining, Applying shader: {shader}")
         update_status(f"{remaining_shaders} shaders remaining...", color="green", font=("Press Start 2P", 13, 'normal'))
         for i in range(3):
             time.sleep(2)
