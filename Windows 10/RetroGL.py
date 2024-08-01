@@ -70,7 +70,7 @@ def apply_shader(process, shader, index, total_shaders):
         process.stdin.write(command.encode())
         process.stdin.flush()
         remaining_shaders = total_shaders - index + 1
-        print(f"{remaining_shaders} shaders remaining, Applying shader: {shader}")
+        print(f"Applying shader: {shader}")
         update_status(f"{remaining_shaders} shaders remaining...", color="green", font=("Press Start 2P", 13, 'normal'))
         for i in range(3):
             time.sleep(2)
@@ -379,7 +379,7 @@ def finalize_process(shaders, crashed_shaders):
         [len(find_shaders(os.path.join(shader_dir, shader), shader_extensions)) for shader in create_temp_shader_list()]
     )
     with open(crash_report_path, 'w') as file:
-        file.write(f"Video_driver = vulkan\n")
+        file.write(f"Video_driver = gl\n")
         file.write(f"Screen resolution: {screen_resolution}\n")
         corename = get_core_corename(selected_core)
         file.write(f"Core name: {corename}\n")
