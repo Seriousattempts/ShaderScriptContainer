@@ -1,9 +1,9 @@
 # ShaderScriptContainer
 Obtain a folder of shader screenshots from retroarch by using your rom, save state and a container
 
-[![How to see every RetroArch shader on Windows 10 Video](https://i.ytimg.com/vi/fM8buydFWu0/maxresdefault.jpg)](https://www.youtube.com/watch?v=fM8buydFWu0 "How to see every RetroArch shader on Windows 10 Video")
-
 ## **Windows 10**
+
+[![How to see every RetroArch shader on Windows 10 Video](https://i.ytimg.com/vi/fM8buydFWu0/maxresdefault.jpg)](https://www.youtube.com/watch?v=fM8buydFWu0 "How to see every RetroArch shader on Windows 10 Video")
 
 Prerequisites
 - ROM
@@ -48,3 +48,22 @@ You can increase/decrease the speed of how the shaders are captured in the pytho
 - CTRL + F, type time.sleep(20). That should be within the function def start_retroarch, it should have time.sleep(20). This is based on your computer speed, as some has note with bezels can crash https://forums.libretro.com/t/mega-bezel-reflection-shader-feedback-and-updates/25512/1491
 - Increase/decrease the number based on your own discretion.
 - After adjusting CTRL + F, type "* 35" without quotes. Increase or decrease that number for all 4 locations within that file to get a proper max estimated time when running the shader program that corresponds with how you adjusted the time.sleep(20) for the start_retroarch function.
+
+## ** Linux **
+
+### **Ubuntu**
+
+1. Install Python3, wmctrl and other packages
+- `sudo apt install python3-full python3-tk python3-pip python3 git unzip wget curl wmctrl`
+2. Launch Python in virutal environment, and install python packages
+- `python3 -m venv myenv
+source myenv/bin/activate
+pip install tqdm requests gitpython customtkinter pynput`
+3. To run either the Vulkan, Gl or GLCore driver, you need to edit the paths of those python files. You can run the "Configuration path and update downloader.py" file, add the retroarch.cfg to that path, and then select generate configuration, unless you want to add those paths manually.
+- Open terminal in the path of the python files downloaded
+- `python3 "Configuration path and update downloader.py"`
+If you want the latest retroarch cores and shaders, you can select "*download resources*"
+4. Copy configuration, open your specified python driver file, paste configuration over the lines from 13 - 26, save.
+5. Run the code:
+- `python3 "NameofDriver shader capture.py"`
+6. Profit
