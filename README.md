@@ -49,7 +49,7 @@ You can increase/decrease the speed of how the shaders are captured in the pytho
 - Increase/decrease the number based on your own discretion.
 - After adjusting CTRL + F, type "* 35" without quotes. Increase or decrease that number for all 4 locations within that file to get a proper max estimated time when running the shader program that corresponds with how you adjusted the time.sleep(20) for the start_retroarch function.
 
-## ** Linux **
+## Linux
 
 [![How to see every RetroArch shader on Linux Video](https://i.ytimg.com/vi/dbQoGDej9G4/maxresdefault.jpg)](https://www.youtube.com/watch?v=dbQoGDej9G4 "How to see every RetroArch shader on Windows 10 Video")
 
