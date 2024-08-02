@@ -55,7 +55,7 @@ You can increase/decrease the speed of how the shaders are captured in the pytho
 
 1. Install Python3, wmctrl and other packages
 - `sudo apt install python3-full python3-tk python3-pip python3 git unzip wget curl wmctrl`
-2. Launch Python in virutal environment, and install python packages
+2. Launch python a in virutal environment, and then install python packages
 - `python3 -m venv myenv
 source myenv/bin/activate
 pip install tqdm requests gitpython customtkinter pynput`
