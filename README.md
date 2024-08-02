@@ -71,4 +71,4 @@ If you want the latest retroarch cores and shaders, you can select "*download re
 - `python3 "NameofDriver shader capture.py"`
 6. Profit
 
-* Note: it deletes every screenshot from the screenshot directory after it creates them in a zip file. Pay attention to that.
+### Note: it deletes every screenshot from the screenshot directory after it creates them in a zip file. Pay attention to that.
