@@ -51,6 +51,8 @@ You can increase/decrease the speed of how the shaders are captured in the pytho
 
 ## ** Linux **
 
+[![How to see every RetroArch shader on Linux Video](https://i.ytimg.com/vi/dbQoGDej9G4/maxresdefault.jpg)](https://www.youtube.com/watch?v=dbQoGDej9G4 "How to see every RetroArch shader on Windows 10 Video")
+
 ### **Ubuntu**
 
 1. Install Python3, wmctrl and other packages
